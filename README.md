@@ -5,3 +5,4 @@ RP2040 PIO serial port, created for the VT2040 terminal. Intended for communicat
 * Can use any GPIO pins for TX and RX
 * 115200 8N1, compatible with most ESP8266 firmwares
 * Ignores ESP8266 boot messages
+* 4kB receive buffer (configurable)
