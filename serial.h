@@ -12,3 +12,8 @@
 #define SERIAL_PIO pio1
 #define SERIAL_PIO_RX_SM 0
 #define SERIAL_PIO_TX_SM 1
+
+void serial_init();
+void serial_putc(char c);
+bool serial_ready();
+char serial_getc();
