@@ -61,12 +61,12 @@ void serial_init() {
   irq_set_enabled(irq, true);
 }
 
-static inline void serial_putc(char c) {
+void serial_putc(char c) {
   // Send one byte (blocking)
   pio_sm_put_blocking(SERIAL_PIO, SERIAL_PIO_TX_SM, (uint32_t)c);
 }
 
-static inline bool serial_ready() {
+bool serial_ready() {
   // Returns true if there is data in the receive buffer
   return !(serial_rx_buf_start == serial_rx_buf_end);
 }
