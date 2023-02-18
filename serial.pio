@@ -21,20 +21,6 @@ bitloop:                ; Send 8 bits
   jmp x-- bitloop [6]
 
 % c-sdk {
-
-  // Set serial parameters here.
-  // Changing the baud rate will break the receive code. Comment out the first
-  // 5 lines of the serial_rx PIO program above.
-  #define SERIAL_PIN_RX 1
-  #define SERIAL_PIN_TX 2
-  #define SERIAL_BAUDRATE 115200
-  #define SERIAL_BUFSIZE 4096
-
-  // Select which PIO and state machines to use
-  #define SERIAL_PIO pio1
-  #define SERIAL_PIO_RX_SM 0
-  #define SERIAL_PIO_TX_SM 1
-  
   uint8_t serial_rx_buf[SERIAL_BUFSIZE];
   uint serial_rx_buf_start = 0;
   uint serial_rx_buf_end = 0;
