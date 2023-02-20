@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
-#include  "pico/stdlib.h"
+#include "pico/stdlib.h"
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
 #include "serial.h"
@@ -65,6 +66,13 @@ void serial_init() {
 void serial_putc(char c) {
   // Send one byte (blocking)
   pio_sm_put_blocking(SERIAL_PIO, SERIAL_PIO_TX_SM, (uint32_t)c);
+}
+
+void serial_puts(const char *s) {
+  int len = strlen(s);
+  for (int i = 0; i < len; i++) {
+    serial_putc(s[i]);
+  }
 }
 
 bool serial_ready() {

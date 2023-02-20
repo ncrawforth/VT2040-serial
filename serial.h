@@ -15,5 +15,6 @@
 
 void serial_init();
 void serial_putc(char c);
+void serial_puts(const char *c);
 bool serial_ready();
 char serial_getc();
