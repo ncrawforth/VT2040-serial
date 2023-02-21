@@ -1,6 +1,6 @@
 // Set serial parameters
 // Changing the baud rate will break the receive code. Comment out the first
-// 5 lines of the serial_rx PIO program in lcd.pio.
+// 5 lines of the serial_rx PIO program in serial.pio.
 #define SERIAL_BAUDRATE 115200
 #define SERIAL_BUFSIZE 4096
 
